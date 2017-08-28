@@ -65,6 +65,16 @@ namespace SwirlFeed.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "First Name")]
+        [StringLength(25, MinimumLength = 2)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(25, MinimumLength = 2)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

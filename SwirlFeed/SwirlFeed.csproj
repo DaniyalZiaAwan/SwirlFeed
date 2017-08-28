@@ -205,9 +205,22 @@
     <Compile Include="Migrations\201708281904568_InitialModel.Designer.cs">
       <DependentUpon>201708281904568_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708281922384_AddedNamePropsInUserTbl.cs" />
+    <Compile Include="Migrations\201708281922384_AddedNamePropsInUserTbl.Designer.cs">
+      <DependentUpon>201708281922384_AddedNamePropsInUserTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281947032_AddNameToUserTbl.cs" />
+    <Compile Include="Migrations\201708281947032_AddNameToUserTbl.Designer.cs">
+      <DependentUpon>201708281947032_AddNameToUserTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281951409_AddImageToUserTbl.cs" />
+    <Compile Include="Migrations\201708281951409_AddImageToUserTbl.Designer.cs">
+      <DependentUpon>201708281951409_AddImageToUserTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -215,6 +228,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Users\default.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,6 +303,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708281904568_InitialModel.resx">
       <DependentUpon>201708281904568_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281922384_AddedNamePropsInUserTbl.resx">
+      <DependentUpon>201708281922384_AddedNamePropsInUserTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281947032_AddNameToUserTbl.resx">
+      <DependentUpon>201708281947032_AddNameToUserTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281951409_AddImageToUserTbl.resx">
+      <DependentUpon>201708281951409_AddImageToUserTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

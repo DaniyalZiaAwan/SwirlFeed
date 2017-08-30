@@ -1,4 +1,16 @@
-﻿body {
+﻿
+@font-face {
+    font-family: 'Bellota-LightItalic';
+    src: url('../../fonts/Bellota-LightItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Bellota-BoldItalic';
+    src: url('../../fonts/Bellota-BoldItalic.otf') format('opentype');
+}
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -9,16 +21,37 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.navbar {
+    background-color: #20aae5;
+    border-bottom: 4px solid #1894ca;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.navbar-brand {
+    font-family: 'Bellota-BoldItalic';
+    font-size: 2em;
+}
+
+
+/* Bootstrap Overrides */
+.nav > li > a {
+    padding: 10px 5px 5px 5px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.nav.navbar-nav.navbar-right li:hover {
+    border-bottom: 2px solid orange;
+    cursor:pointer;
+}
+
+.nav.navbar-nav.navbar-right li:hover a {
+    color:white;
+}
+
+/* Resuable */
+
+.marTop5 {
+    margin-top: 5px;
 }

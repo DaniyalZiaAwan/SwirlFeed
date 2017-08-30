@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201708281951409_AddImageToUserTbl.Designer.cs">
       <DependentUpon>201708281951409_AddImageToUserTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708300422494_AddAccount_ClosedPropInUserTbl.cs" />
+    <Compile Include="Migrations\201708300422494_AddAccount_ClosedPropInUserTbl.Designer.cs">
+      <DependentUpon>201708300422494_AddAccount_ClosedPropInUserTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -312,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708281951409_AddImageToUserTbl.resx">
       <DependentUpon>201708281951409_AddImageToUserTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708300422494_AddAccount_ClosedPropInUserTbl.resx">
+      <DependentUpon>201708300422494_AddAccount_ClosedPropInUserTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

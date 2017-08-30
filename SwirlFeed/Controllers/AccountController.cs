@@ -76,6 +76,11 @@ namespace SwirlFeed.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    var db = new ApplicationDbContext();
+                    var me = db.Users.SingleOrDefault(u => u.Email == model.Email);
+                    me.Account_Closed = false;
+                    db.SaveChanges();
+
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

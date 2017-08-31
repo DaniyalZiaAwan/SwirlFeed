@@ -6,9 +6,9 @@ namespace SwirlFeed.Repositories
 {
     public class UserRepository : Repository<ApplicationUser>, IUserRepository
     {
-        public UserRepository(ApplicationDbContext context) : base(context)
-        {
-        }
+        public UserRepository(ApplicationDbContext context) : base(context) { }
+
+        public ApplicationDbContext DbContext => Context as ApplicationDbContext;
 
         public ApplicationUser GetWithRelatedData(string userId)
         {
@@ -16,14 +16,6 @@ namespace SwirlFeed.Repositories
                                    .Include(u => u.Posts.Select(p => p.Posted_By))
                                    .Include(u => u.Posts.Select(p => p.User_To))
                                    .SingleOrDefault(u => u.Id == userId);
-        }
-
-        public ApplicationDbContext DbContext
-        {
-            get
-            {
-                return Context as ApplicationDbContext;
-            }
         }
     }
 }

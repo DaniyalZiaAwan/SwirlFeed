@@ -7,9 +7,9 @@ namespace SwirlFeed.Repositories
 {
     public class FriendRepository : Repository<Friend>, IFriendRepository
     {
-        public FriendRepository(DbContext context) : base(context)
-        {
-        }
+        public FriendRepository(DbContext context) : base(context) { }
+
+        internal ApplicationDbContext DbContext => Context as ApplicationDbContext;
 
         public List<Friend> GetAllWithRelatedData(string userId)
         {
@@ -29,7 +29,5 @@ namespace SwirlFeed.Repositories
 
             return posts;
         }
-
-        internal ApplicationDbContext DbContext => Context as ApplicationDbContext;
     }
 }

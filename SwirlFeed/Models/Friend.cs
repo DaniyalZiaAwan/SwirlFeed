@@ -18,14 +18,8 @@ namespace SwirlFeed.Models
 
         internal List<Post> AddPostsToUser(string myId)
         {
-            var posts = new List<Post>();
-
-            if (User1Id == myId)
-                posts.AddRange(User2.Posts);
-            else
-                posts.AddRange(User1.Posts);
-
-            return posts;
+            return new List<Post>(User1Id == myId ?
+                                   User2.Posts : User1.Posts);
         }
     }
 }

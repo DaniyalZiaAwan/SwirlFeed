@@ -4,9 +4,6 @@ namespace SwirlFeed.Controllers
 {
     public class ProfileController : Controller
     {
-        public ActionResult UserProfile()
-        {
-            return View();
-        }
+        public ActionResult UserProfile() => View();
     }
 }

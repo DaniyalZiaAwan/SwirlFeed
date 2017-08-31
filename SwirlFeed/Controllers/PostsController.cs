@@ -9,9 +9,9 @@ namespace SwirlFeed.Controllers
     public class PostsController : Controller
     {
         readonly IUnitOfWork _unitOfWork;
-        public PostsController()
+        public PostsController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
+            _unitOfWork = unitOfWork;
         }
 
         [HttpPost]

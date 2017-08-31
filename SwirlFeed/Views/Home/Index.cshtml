@@ -1,15 +1,44 @@
-﻿@{
+﻿@model SwirlFeed.ViewModels.HomeIndexVm
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="row">
-    
-    <div class="col-sm-3">
-        
+
+    <div class="col-sm-3" id="userDetails">
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="@Url.Action("UserProfile", "Profile")">
+                    <img class="img-rounded" src="@Model.User.Image" width="130" alt="User image" />
+                </a>
+            </div>
+            <div class="col-sm-offset-1 col-sm-5">
+                <a href="@Url.Action("UserProfile", "Profile")"><span>@Model.User.Name</span></a>
+            </div>
+        </div>
     </div>
 
-    <div class="col-sm-9">
-        asdasd
+    <div class="col-sm-8">
+        <div id="postArea">
+            <form>
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-sm-10">
+                            <textarea placeholder="Got Something To Say?" name="txtPost" class="form-control"></textarea>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="submit" id="btnPost" value="Post" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr />
+
+        </div>
+
+
+
     </div>
 
 

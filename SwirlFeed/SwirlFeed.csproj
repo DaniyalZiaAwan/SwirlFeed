@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,13 +222,19 @@
     <Compile Include="Migrations\201708300422494_AddAccount_ClosedPropInUserTbl.Designer.cs">
       <DependentUpon>201708300422494_AddAccount_ClosedPropInUserTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708310438410_AddPostTbl.cs" />
+    <Compile Include="Migrations\201708310438410_AddPostTbl.Designer.cs">
+      <DependentUpon>201708310438410_AddPostTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\HomeIndexVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -344,6 +351,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Profile\UserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -373,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708300422494_AddAccount_ClosedPropInUserTbl.resx">
       <DependentUpon>201708300422494_AddAccount_ClosedPropInUserTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708310438410_AddPostTbl.resx">
+      <DependentUpon>201708310438410_AddPostTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

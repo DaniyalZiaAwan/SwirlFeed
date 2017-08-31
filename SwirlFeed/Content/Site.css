@@ -11,8 +11,9 @@
 
 
 body {
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 20px;
+    background-color:lightgray;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -54,4 +55,21 @@ body {
 
 .marTop5 {
     margin-top: 5px;
+}
+
+/* Home Page */
+
+#userDetails{
+    width:250px;
+    background-color:white;
+    padding:15px;
+}
+
+#postArea{
+    background-color:white;
+    padding:15px;
+}
+
+#btnPost{
+    padding:15px;
 }

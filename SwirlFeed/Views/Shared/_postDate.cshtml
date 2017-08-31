@@ -1,0 +1,69 @@
+﻿@model SwirlFeed.Models.Post
+
+@if (DateTime.Now.Year - Model.DateTime.Year > 0)
+{
+    <span class="postDate">@Model.DateTime.ToString("d MMM yyyy")</span>
+}
+else
+{
+    if (DateTime.Now.Month - Model.DateTime.Month > 0)
+    {
+        if (DateTime.Now.Month - Model.DateTime.Month == 1)
+        {
+            if (DateTime.Now.Day - Model.DateTime.Day < 29)
+            {
+                <span class="postDate">@((DateTime.Now - Model.DateTime).Days + 1) day ago</span>
+            }
+        }
+        else
+        {
+            <span class="postDate">@Model.DateTime.ToString("d MMM yyyy")</span>
+        }
+    }
+    else
+    {
+        if ((DateTime.Now.Day - Model.DateTime.Day) > 0)
+        {
+            if ((DateTime.Now - Model.DateTime).Days < 29)
+            {
+                if ((DateTime.Now - Model.DateTime).Days > 1)
+                {
+                    <span class="postDate">@((DateTime.Now - Model.DateTime).Days + 1) days ago</span>
+                }
+                else
+                {
+                    <span class="postDate">@((DateTime.Now - Model.DateTime).Days + 1) day ago</span>
+                }
+            }
+            else
+            {
+                <span class="postDate">@Model.DateTime.ToString("d MMM yyyy")</span>
+            }
+        }
+        else
+        {
+            if ((DateTime.Now - Model.DateTime).Hours >= 1)
+            {
+                if ((DateTime.Now - Model.DateTime).Hours == 1)
+                {
+                    <span class="postDate"> @((DateTime.Now - Model.DateTime).Hours) hour ago </span>
+                }
+                else
+                {
+                    <span class="postDate"> @((DateTime.Now - Model.DateTime).Hours) hours ago </span>
+                }
+            }
+            else
+            {
+                if ((DateTime.Now - Model.DateTime).Minutes == 0)
+                {
+                    <span class="postDate">Just now</span>
+                }
+                else
+                {
+                    <span class="postDate">@((DateTime.Now - Model.DateTime).Minutes) minutes ago </span>
+                }
+            }
+        }
+    }
+}

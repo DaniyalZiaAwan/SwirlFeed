@@ -4,7 +4,6 @@
 }
 
 <div class="row">
-
     <div class="col-sm-3" id="userDetails">
         <div class="row">
             <div class="col-sm-6">
@@ -14,7 +13,7 @@
             </div>
             <div class="col-sm-offset-1 col-sm-5">
                 <a href="@Url.Action("UserProfile", "Profile")"><span>@Model.User.Name</span></a>
-                <div>Posts : 0</div>
+                <div>Posts : @Model.User.Posts.Count</div>
                 <div>Likes : 0</div>
             </div>
         </div>
@@ -40,6 +39,7 @@
             <div class="posts">
                 @foreach (var post in Model.Posts)
                 {
+                <div class="post">
                     <div class="post_profile_pic">
                         <img src="@post.Posted_By.Image" alt="Post User Image" width="50" />
                     </div>
@@ -47,17 +47,18 @@
                         <a href="@post.Posted_By.Id">
                             @post.Posted_By.Name @(post.User_To == null ? "" : "to " + post.User_To.Name)
                         </a>
-                        @((DateTime.Now - post.DateTime).Minutes)
+                        &nbsp; &nbsp;
+                        @Html.Partial("_postDate", post)
+
                     </div>
                     <div class="post_body">
                         @post.Body
                         <br />
                     </div>
-
+                </div>
+                <hr />
                 }
             </div>
-
         </div>
-
     </div>
 </div>

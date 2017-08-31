@@ -73,3 +73,17 @@ body {
 #btnPost{
     padding:15px;
 }
+
+.post{
+    font-size:15px;
+    padding:0 5px;
+}
+
+.post_profile_pic{
+    float:left;
+    margin-right:10px;
+}
+
+.post_profile_pic img{
+    border-radius:5px;
+}

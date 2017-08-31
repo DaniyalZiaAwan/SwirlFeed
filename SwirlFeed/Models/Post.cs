@@ -11,6 +11,8 @@ namespace SwirlFeed.Models
         public bool User_Deleted { get; set; }
 
         public ApplicationUser Posted_By { get; set; }
+        public string Posted_ById { get; set; }
         public ApplicationUser User_To { get; set; }
+        public string User_ToId { get; set; }
     }
 }

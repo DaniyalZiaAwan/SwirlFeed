@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using SwirlFeed.Models;
 using SwirlFeed.ViewModels;
@@ -20,8 +21,10 @@ namespace SwirlFeed.Controllers
             var me = _context.Users.Find(myId);
 
             var viewModel = new HomeIndexVm
+
             {
-                User = me
+                User = me,
+                Posts = _context.Posts.OrderByDescending(p => p.Id).ToList()
             };
 
             return View(viewModel);

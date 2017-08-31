@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +226,10 @@
     <Compile Include="Migrations\201708310438410_AddPostTbl.cs" />
     <Compile Include="Migrations\201708310438410_AddPostTbl.Designer.cs">
       <DependentUpon>201708310438410_AddPostTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708310535513_ChangeFKinPostTbl.cs" />
+    <Compile Include="Migrations\201708310535513_ChangeFKinPostTbl.Designer.cs">
+      <DependentUpon>201708310535513_ChangeFKinPostTbl.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -355,6 +360,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Posts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -384,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708310438410_AddPostTbl.resx">
       <DependentUpon>201708310438410_AddPostTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708310535513_ChangeFKinPostTbl.resx">
+      <DependentUpon>201708310535513_ChangeFKinPostTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

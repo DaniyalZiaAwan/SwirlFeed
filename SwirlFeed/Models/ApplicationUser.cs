@@ -24,6 +24,7 @@ namespace SwirlFeed.Models
         public bool Account_Closed { get; set; }
 
         public List<Post> Posts { get; set; }
+        public List<Friend> Friends { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

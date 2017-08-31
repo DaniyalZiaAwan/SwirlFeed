@@ -2,15 +2,16 @@
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using SwirlFeed.Models;
+using SwirlFeed.Repositories;
 
 namespace SwirlFeed.Controllers
 {
     public class PostsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        readonly IUnitOfWork _unitOfWork;
         public PostsController()
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
         }
 
         [HttpPost]
@@ -23,8 +24,8 @@ namespace SwirlFeed.Controllers
             post.User_Closed = false;
             post.User_Deleted = false;
 
-            _context.Posts.Add(post);
-            _context.SaveChanges();
+            _unitOfWork.PostRepository.Add(post);
+            _unitOfWork.Complete();
 
             return RedirectToAction("Index", "Home");
         }

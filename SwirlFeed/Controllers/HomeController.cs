@@ -2,29 +2,33 @@
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using SwirlFeed.Models;
+using SwirlFeed.Repositories;
 using SwirlFeed.ViewModels;
 
 namespace SwirlFeed.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
         public HomeController()
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
         }
 
         [Authorize]
         public ActionResult Index()
         {
             var myId = User.Identity.GetUserId();
-            var me = _context.Users.Find(myId);
+            var myFriends = _unitOfWork.FriendRepository
+                                       .GetAllWithRelatedData(myId);
+
+            var posts = _unitOfWork.FriendRepository
+                                   .GetFriendsPosts(myId, myFriends);
 
             var viewModel = new HomeIndexVm
-
             {
-                User = me,
-                Posts = _context.Posts.OrderByDescending(p => p.Id).ToList()
+                User = _unitOfWork.UserRepository.GetWithRelatedData(myId),
+                Posts = posts.OrderByDescending(p => p.Id).ToList()
             };
 
             return View(viewModel);

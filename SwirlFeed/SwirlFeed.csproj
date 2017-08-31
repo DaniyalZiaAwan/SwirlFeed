@@ -235,13 +235,36 @@
     <Compile Include="Migrations\201708311904220_AddPostsPropInUserTbl.Designer.cs">
       <DependentUpon>201708311904220_AddPostsPropInUserTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708311933074_AddFriendsTbl.cs" />
+    <Compile Include="Migrations\201708311933074_AddFriendsTbl.Designer.cs">
+      <DependentUpon>201708311933074_AddFriendsTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708311943312_DelFriendsTbl.cs" />
+    <Compile Include="Migrations\201708311943312_DelFriendsTbl.Designer.cs">
+      <DependentUpon>201708311943312_DelFriendsTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708311945113_AddFriendsTblFor2nd.cs" />
+    <Compile Include="Migrations\201708311945113_AddFriendsTblFor2nd.Designer.cs">
+      <DependentUpon>201708311945113_AddFriendsTblFor2nd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FriendRepository.cs" />
+    <Compile Include="Repositories\IFriendRepository.cs" />
+    <Compile Include="Repositories\IPostRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IUnitOfWork.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\PostRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\HomeIndexVm.cs" />
   </ItemGroup>
@@ -401,6 +424,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708311904220_AddPostsPropInUserTbl.resx">
       <DependentUpon>201708311904220_AddPostsPropInUserTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708311933074_AddFriendsTbl.resx">
+      <DependentUpon>201708311933074_AddFriendsTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708311943312_DelFriendsTbl.resx">
+      <DependentUpon>201708311943312_DelFriendsTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708311945113_AddFriendsTblFor2nd.resx">
+      <DependentUpon>201708311945113_AddFriendsTblFor2nd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -18,11 +18,17 @@ namespace SwirlFeed.Controllers
         public ActionResult Index()
         {
             var myId = User.Identity.GetUserId();
+
             var myFriends = _unitOfWork.FriendRepository
                                        .GetAllWithRelatedData(myId);
 
+            // getting posts of ur friends
             var posts = _unitOfWork.FriendRepository
                                    .GetFriendsPosts(myId, myFriends);
+
+            // adding ur posts
+            var me = _unitOfWork.UserRepository.Get(myId);
+            posts.AddRange(me.Posts);
 
             var viewModel = new HomeIndexVm
             {
